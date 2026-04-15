@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend or Foe Specialty Coffee | Bern</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --espresso: #1A1210;
+            --off-white: #F5F0E6;
+            --amber: #C5A059;
+            --dark-green: #2D3E2F;
+            --serif: 'Cormorant Garamond', serif;
+            --sans: 'Inter', sans-serif;
+            --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--espresso); color: var(--off-white); font-family: var(--sans); line-height: 1.6; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 25px; }
+        .accent { color: var(--amber); }
+        .tag { color: var(--amber); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 3px; display: block; margin-bottom: 20px; }
+        .text-center { text-align: center; }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(26,18,16,0.5), rgba(26,18,16,0.8)), 
+                        url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat;
+        }
+        .hero h1 { font-family: var(--serif); font-size: clamp(2.5rem, 8vw, 5.5rem); line-height: 1; margin-bottom: 20px; }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 40px;
+            background-color: var(--dark-green);
+            color: white;
+            text-decoration: none;
+            border: 1px solid var(--amber);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: var(--transition);
+        }
+        .btn:hover { background-color: var(--amber); color: var(--espresso); transform: translateY(-3px); }
+
+        /* SECTIONS */
+        section { padding: 100px 0; }
+        .grid { display: grid; gap: 60px; align-items: center; }
+        .two-cols { grid-template-columns: 1fr 1fr; }
+
+        .img-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+        }
+        .img-container img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+
+        /* GALLERY */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .gallery-item { height: 350px; overflow: hidden; border: 1px solid rgba(197, 160, 89, 0.15); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); filter: brightness(0.7) sepia(0.2); }
+        .gallery-item:hover img { transform: scale(1.05); filter: brightness(1) sepia(0); }
+
+        /* MENU */
+        .menu-wrapper { background-color: #231916; padding: 50px; border-radius: 4px; border: 1px solid rgba(197, 160, 89, 0.1); }
+        .menu-list { list-style: none; margin-top: 30px; }
+        .menu-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(245, 240, 230, 0.1); }
+
+        /* MAP */
+        .map-wrapper { width: 100%; height: 450px; border: 1px solid var(--amber); filter: grayscale(1) invert(0.92) contrast(1.2); }
+        .map-wrapper iframe { width: 100%; height: 100%; border: none; }
+
+        /* ANIMATIONS */
+        .reveal { opacity: 0; transform: translateY(30px); transition: var(--transition); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 900px) { .two-cols { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <span class="tag" style="color: #fff">Hidden Gem in Bern</span>
+            <h1>Dein Kaffee. <br>Deine Bohne. <br><span class="accent">Dein Moment.</span></h1>
+            <a href="#visit" class="btn">Besuche uns</a>
+        </div>
+    </header>
+
+    <!-- ÜBER UNS -->
+    <br><br>
+    <section class="container" id="about">
+        <div class="grid two-cols">
+            <div class="reveal">
+                <span class="tag">Handwerk</span>
+                <h2 style="font-family: var(--serif); font-size: 3rem; margin-bottom: 20px;">Anna & Ricardo</h2>
+                <p>Mit Ricardo’s jahrelanger Expertise in der Schweizer Kaffeeszene führen wir Friend or Foe als Multi-Roaster Café. Wir bieten eine rotierende Bühne für die besten unabhängigen Röstereien Europas.</p>
+            </div>
+            <div class="img-container reveal">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1000&auto=format&fit=crop" alt="Barista working">
+            </div>
+        </div>
+    </section>
+    <br><br>
+
+    <!-- GALLERY -->
+    <section class="container">
+        <span class="tag text-center">Inspiration</span>
+        <h2 class="text-center" style="font-family: var(--serif); font-size: 2.5rem;">Atmosphäre & Detail</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&q=80&w=800" alt="Coffee 1"></div>
+            <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&q=80&w=800" alt="Coffee 2"></div>
+            <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&q=80&w=800" alt="Coffee 3"></div>
+            <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&q=80&w=800" alt="Coffee 4"></div>
+            <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=800" alt="Coffee 5"></div>
+            <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&q=80&w=800" alt="Coffee 6"></div>
+        </div>
+    </section>
+
+    <!-- MENÜ -->
+    <section style="background-color: #140E0C;">
+        <div class="container grid two-cols">
+            <div class="reveal">
+                <div class="menu-wrapper">
+                    <span class="tag">Selection</span>
+                    <h3 style="font-family: var(--serif); font-size: 2rem;">Getränke</h3>
+                    <ul class="menu-list">
+                        <li class="menu-item"><span>Espresso (Single/Double)</span><span>5.50 / 6.50</span></li>
+                        <li class="menu-item"><span>Flat White</span><span>6.20</span></li>
+                        <li class="menu-item"><span>Filter Kaffee (Hand Brew)</span><span>ab 7.00</span></li>
+                        <li class="menu-item"><span>Matcha Latte</span><span>7.00</span></li>
+                        <li class="menu-item"><span>Zimtschnecke / Bananenbrot</span><span>ab 5.50</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="img-container reveal">
+                <!-- KORRIGIERTES BOHNEN BILD -->
+                <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&q=80&w=1000" alt="Specialty Coffee Beans">
+            </div>
+        </div>
+    </section>
+
+    <!-- VISIT & MAP -->
+    <br>
+    <section class="container" id="visit">
+        <div class="grid two-cols">
+            <div class="reveal">
+                <span class="tag">Location</span>
+                <h2 style="font-family: var(--serif); font-size: 2.5rem;">Marktgasse 19, Bern</h2>
+                <p>Besuche uns im Untergeschoss – Treppe runter und dann auf der <strong>rechten Seite</strong>.</p>
+                <div style="margin-top: 30px; border-left: 2px solid var(--amber); padding-left: 20px;">
+                    <p>🐾 Monikas willkommen</p>
+                    <p>💳 Card Only</p>
+                    <p>💻 Laptop Friendly</p>
+                </div>
+            </div>
+            <div class="map-wrapper reveal">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2721.4162464157!2d7.445214476906478!3d46.94784913358941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e39c43d2c145d%3A0x6d90d8a6e8f49896!2sMarktgasse%2019%2C%203011%20Bern!5e0!3m2!1sde!2sch!4v1709564234567!5m2!1sde!2sch" 
+                    allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+    <br>
+
+    <footer style="padding: 60px 0; text-align: center; border-top: 1px solid rgba(197,160,89,0.1);">
+        <p style="font-family: var(--serif); font-size: 1.5rem;">FRIEND <span class="accent">OR</span> FOE</p>
+        <p style="margin-top: 10px; font-size: 0.8rem; color: #888;">&copy; 2026 Specialty Coffee Market Bern</p>
+    </footer>
+6
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
